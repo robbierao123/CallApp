@@ -18,7 +18,8 @@ const ArchivedCall = (props) => {
           fontSize: '15px',
           margin: '1px 1px',
           transitionDuration: '0.4s',
-          cursor: 'pointer'
+          cursor: 'pointer',
+          borderRadius: '5px',
         },
         red:{
           backgroundColor: '#FF0000',/* Green */
@@ -31,8 +32,14 @@ const ArchivedCall = (props) => {
           fontSize: '15px',
           margin: '1px 1px',
           transitionDuration: '0.4s',
-          cursor: 'pointer'
+          cursor: 'pointer',
+          borderRadius: '5px',
       
+        },
+        round :{
+          border: '2px solid grey',
+          borderRadius: '12px',
+          padding: '5px'
         }
       }
     const { single , handleshowlist} = props;
@@ -57,11 +64,12 @@ const ArchivedCall = (props) => {
         // check if the call is archived or did not clicked detail, 
         // if not then add to the activity list
      <div >
-        {single.is_archived ?  <div> <h1>from: {single.from}</h1> <span style ={{float:"right"}}>{time_converted}</span>
+        {single.is_archived ?  
+        <div style={style.round}> <h1>from: {single.from}</h1> <span style ={{float:"right"}}>{time_converted}</span>
             <h1>tried to call: {single.to} </h1>
 
       <button style={style.green} onClick={()=>handleshowlist({single})} >detail</button>   
-      <button style={style.red}onClick={()=>handleUnarchive({single})} >Unarchive</button>  
+      <button style={style.red}onClick={()=>handleUnarchive({single})} >Unarchive</button>  <br/>
 
 
        </div> :

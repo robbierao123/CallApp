@@ -19,7 +19,8 @@ const Call = props => {
           fontSize: '15px',
           margin: '1px 1px',
           transitionDuration: '0.4s',
-          cursor: 'pointer'
+          cursor: 'pointer',
+          borderRadius: '5px',
         },
         brown:{
           backgroundColor: '#8B4513',/* Green */
@@ -32,9 +33,20 @@ const Call = props => {
           fontSize: '15px',
           margin: '1px 1px',
           transitionDuration: '0.4s',
-          cursor: 'pointer'
+          cursor: 'pointer',
+          borderRadius: '5px',
       
+        },
+
+        round :{
+          border: '2px solid grey',
+          borderRadius: '12px',
+          padding: '5px'
+        },
+        light_text:{
+          opacity: 0.8
         }
+        
       }
 
     
@@ -61,12 +73,14 @@ const Call = props => {
      <div >
         {single.is_archived ? <h1></h1> :
 
-           <div> <span>from: {single.from} </span>    <span style ={{float:"right"}}> {time_converted}</span>
-            <h1>tried to call: {single.to} </h1>
+           <div style={style.round}> <span>from: {single.from} </span>    <span style ={{float:"right"}}> {time_converted}</span>
 
-      <button style={style.green} onClick={()=>handleshowlist({single})} >detail</button>  
+         
+                  <h1 style={style.light_text}>tried to call: {single.to} </h1>
 
-      <button style={style.brown}onClick={()=>handleArchive({single})} >Archive</button>  
+                  <button style={style.green} onClick={()=>handleshowlist({single})} >detail</button>  
+
+                <button style={style.brown}onClick={()=>handleArchive({single})} >Archive</button>  <br />
           
 
        <br/>
