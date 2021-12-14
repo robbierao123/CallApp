@@ -34,7 +34,6 @@ module.exports = {
     new HtmlWebPackPlugin({
       template: "./public/index.html",
       filename: "./index.html",
-      publicPath: '/'
     })
   ]
 };
