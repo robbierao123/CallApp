@@ -8,10 +8,9 @@
   "license": "",
   "private": false,
   "scripts": {
+    "start": "node server.js",
     "dev": "webpack-dev-server --mode development --open",
-    "build": "webpack --mode production",
-    "prof":"NODE_ENV=production webpack --mode=development",
-    "serve":"npm run prod && serve -s dist"
+    "build": "webpack --mode production"
   },
   "dependencies": {
     "axios": "^0.24.0",
